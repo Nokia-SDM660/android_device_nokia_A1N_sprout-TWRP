@@ -1,7 +1,7 @@
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-LOCAL_PATH := device/nokia/DRG_sprout
+LOCAL_PATH := device/nokia/A1N_sprout
 
 # Shipping level
 PRODUCT_SHIPPING_API_LEVEL := 27
@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/verity.mk)
 
 # Platform
-PRODUCT_PLATFORM := sdm660
+PRODUCT_PLATFORM := msm8998
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -28,8 +28,7 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     system \
-    vendor \
-    vbmeta
+    vendor
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -51,8 +50,8 @@ PRODUCT_PACKAGES_DEBUG += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl.recovery \
-    bootctrl.sdm660 \
-    bootctrl.sdm660.recovery
+    bootctrl.msm8998 \
+    bootctrl.msm8998.recovery
 
 # QCOM Decryption
 PRODUCT_PACKAGES += \
@@ -61,4 +60,4 @@ PRODUCT_PACKAGES += \
 
 # libandroidicu
 PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/DRG_sprout/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so
+    $(OUT_DIR)/target/product/A1N_sprout/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so

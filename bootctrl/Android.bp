@@ -15,7 +15,7 @@
 //
 
 cc_library {
-    name: "bootctrl.sdm660",
+    name: "bootctrl.msm8998",
     defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils.nokia_sdm660"],
+    static_libs: ["libgptutils.nokia_msm8998"],
 }
